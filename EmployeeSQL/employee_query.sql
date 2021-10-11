@@ -21,8 +21,9 @@ INNER JOIN dept_emp AS dem
 USING (dept_no)
 INNER JOIN employees AS e
 ON dem.emp_no=e.emp_no
+WHERE m.emp_no!=e.emp_no
 ORDER BY m.dept_no; 
-
+  
 --Q4.List the department of each employee with the following information: 
 --employee number, last name, first name, and department name.
 
@@ -60,6 +61,7 @@ OR dept_name='Development';
 SELECT last_name, COUNT(last_name) AS "Count" FROM employees
 GROUP BY last_name
 ORDER BY "Count" DESC;
+
 
 
 
