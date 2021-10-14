@@ -27,7 +27,6 @@ ORDER BY m.dept_no;
 --Q4.List the department of each employee with the following information: 
 --employee number, last name, first name, and department name.
 
-DROP VIEW "Employee_Department";
 
 CREATE VIEW "Employee_Department" AS 
 SELECT e.emp_no, e.first_name,e.last_name,d.dept_name
@@ -36,6 +35,8 @@ INNER JOIN dept_emp AS dem
 USING (emp_no)
 INNER JOIN department AS d
 ON dem.dept_no=d.dept_no;
+
+SELECT * FROM "Employee_Department";
 
 --Q5.List first name, last name, and sex for employees
 --whose first name is "Hercules" and last names begin with "B."
